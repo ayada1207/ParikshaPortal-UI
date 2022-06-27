@@ -1,0 +1,49 @@
+<mat-card class="mat-card-profile">
+   <mat-action-list>
+    <div mat-subheader>Menu</div>
+    <button mat-list-item routerLink="/admin"><mat-icon mat-list-icon>home</mat-icon>Home</button>
+
+    <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>account_circle</mat-icon>Profile</button>
+
+  <!--  <mat-accordion>
+      <mat-expansion-panel hideToggle>
+         <mat-expansion-panel-header>
+            <button mat-list-item routerLink="/admin/profile">
+               <mat-icon mat-list-icon>list</mat-icon>Categeories
+            </button>
+         </mat-expansion-panel-header>
+       </mat-expansion-panel>
+   </mat-accordion> -->
+
+   <div class="accordion accordion-flush" id="accordionExample">
+      <div>
+         <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" 
+            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" 
+            aria-controls="collapseOne">
+            <mat-icon mat-list-icon>dashboard</mat-icon>Dashboard
+         </button></h2>
+      </div>
+
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" 
+      data-bs-parent="#accordionExample">
+         <div class="accordion-body">
+            <button mat-list-item routerLink="/admin/view-category">
+               <mat-icon mat-list-icon>library_books</mat-icon>Category</button>
+               
+            <button mat-list-item routerLink="/admin/add-category">
+              <mat-icon mat-list-icon>library_add</mat-icon>Add Category</button>
+              
+            <button mat-list-item routerLink="/admin/view-quiz">
+               <mat-icon mat-list-icon>quiz</mat-icon>Quizes</button>
+
+            <button mat-list-item routerLink="/admin/add-quiz">
+               <mat-icon mat-list-icon>library_add</mat-icon>Add Quizes</button>
+
+         </div>
+       </div>
+   </div>
+
+   <button mat-list-item routerLink="/admin/profile"><mat-icon mat-list-icon>logout</mat-icon>Logout</button>
+   </mat-action-list>
+</mat-card>

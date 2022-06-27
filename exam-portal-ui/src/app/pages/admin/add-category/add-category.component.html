@@ -1,0 +1,35 @@
+
+<mat-card>
+    <h1>Add Category</h1>
+    <mat-card-content> 
+        {{category | json}}
+        <div class="bootstrap-wrapper">
+            
+            <div class="row">
+                <div class="col-md-6">
+                   
+                    <mat-form-field class="width-100" appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Title"
+                        [(ngModel)]="category.title" required="isReq">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="width-100" appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <textarea name="description" placeholder="Description here"
+                         matInput rows="10" [(ngModel)]="category.description">
+                        </textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="text-center">
+            <button type="button" class="btn btn-primary" 
+            (click)="addCategory()">Add Category</button>
+        </div>
+        </div>
+        
+    </mat-card-content>
+</mat-card>

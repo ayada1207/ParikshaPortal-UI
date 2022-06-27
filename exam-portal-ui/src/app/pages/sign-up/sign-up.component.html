@@ -1,0 +1,109 @@
+<div class="bootstrap-wrapper container">
+    <div class="form form-control">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center font-monospace">Register Here!</h2>
+            </div>
+            {{user | json}}
+            <form #formuser="ngForm" (ngSubmit)="onSubmit()">
+            
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">First Name
+                        <div class="pt-2">
+                            <input type="text" required name="firstName" 
+                            [ngClass]="{'red-border':formuser.submitted &&firstName.invalid}" #firstName="ngModel"
+                            
+                             [(ngModel)]="user.firstName" [ngModelOptions]="{standalone: true}"
+                                class="border-grey-600 px-4 text-sm rounded" 
+                                placeholder="First Name"/>
+                        </div>
+                        <span *ngIf="formuser.submitted && firstName.invalid" style="color: red;">
+                            {{errors.firstName}}
+                        </span>
+                    </label>
+                </div>
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">Last Name
+                        <div class="pt-2">
+                            <input type="text" required name="lastName"
+                            [ngClass]="{'red-border':formuser.submitted && lastName.invalid}" #lastName="ngModel"
+                            [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}"
+                            class="border-grey-600 px-4 text-sm rounded" placeholder="Last Name" />
+                        </div>
+                        <span *ngIf="formuser.submitted && lastName.invalid" style="color: red;">
+                            last Name is required
+
+                        </span>
+                    </label>
+                </div>
+
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">Email
+                        <div class="pt-2">
+                            <input type="email" required name="email"
+                            pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([A-Za-z]{2,6}(?:\.[A-Za-z]{2,6})?)$"
+                           (ngModelChange)="onValueChanged()"
+                            [ngClass]="{'red-border':formuser.submitted && email.invalid}" #email="ngModel"
+                            [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"
+                            
+                                class="border-grey-600 px-4 text-sm rounded" placeholder="Email" />
+                        </div>
+                        <div *ngIf="formuser.submitted && email.invalid" style="color: red;">
+                            <div *ngIf="email.invalid">Email is required</div>
+                            
+                        </div>
+                    </label>
+                </div>
+
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">User Name
+                        <div class="pt-2">
+                            <input type="text" required name="userName"
+                            [ngClass]="{'red-border':formuser.submitted && userName.invalid}" #userName="ngModel"
+                            [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
+                                class= "border-grey-600 px-4 text-sm rounded" placeholder="User Name" />
+                        </div>
+                        <span *ngIf="formuser.submitted && userName.invalid" style="color: red;">
+                            User Name is required
+                        </span>
+                    </label>
+                </div>
+
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">Passwrod
+                        <div class="pt-2">
+                            <input type="password" required name="password"
+                            pattern="^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$"
+                            [ngClass]="{'red-border':formuser.submitted && password.invalid}" #password="ngModel"
+                            [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
+                                class="border-grey-600 px-4 text-sm rounded" placeholder="Passwrod" />
+                        </div>
+                        <span *ngIf="formuser.submitted && password.invalid" style="color: red;">
+                            password should contain atleast one number and one special character
+                        </span>
+                    </label>
+                </div>
+
+                <div class="offset-md-3 pt-2">
+                    <label Class="font-monospace">Phone
+                        <div class="pt-2">
+                            <input type="number" required name="phone" minlength="10"
+                             [valueAsNumber]="true"
+                            [ngClass]="{'red-border':formuser.submitted && phone.invalid}" #phone="ngModel"
+                            [(ngModel)]="user.phone" [ngModelOptions]="{standalone: true}"
+                                class="border-grey-600 px-4 text-sm rounded" placeholder="Phone" />
+                        </div>
+                        <span *ngIf="formuser.submitted && phone.invalid" style="color: red;">
+                            Phone Number should be of 10 digit
+                        </span>
+                    </label>
+                </div>
+
+                <div class="offset-md-3 pt-2">
+                    <div class="pt-2">
+                        <button class="btn btn-primary"type="submit" (click)="onSubmit()">Submit</button>
+
+                    </div>
+                </div>
+        </form>
+    </div>
+</div>

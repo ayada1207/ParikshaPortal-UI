@@ -1,0 +1,9 @@
+.mat-card-profile{
+    background-color: beige;
+    border: 1.5px solid black;
+}
+.accordion{
+    --bs-accordion-bg:beige;
+    --bs-accordion-active-bg: beige;
+    --bs-accordion-active-color: black;
+}

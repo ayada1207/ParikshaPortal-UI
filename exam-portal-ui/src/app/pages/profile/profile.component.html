@@ -1,0 +1,42 @@
+<mat-card>
+    <h2>Your Profile</h2>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="containe text-center">
+                <img src="../../../assets/Desktop/admin-profile-picture.jpg"
+                class="profile-image">
+                <h2>Arpit Yadav</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <table class="table">
+                        <tr>
+                            <td>User Name</td>
+                            <td>{{userData.userName}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Email</td>
+                            <td>{{userData.email}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Phone</td>
+                            <td>{{userData.phoneNumber}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Role</td>
+                            <td>Admin</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button class="btn btn-secondary" >Update</button>
+        <button class="btn btn-secondary margin-left margin-right">SHARE</button>
+      </mat-card-actions>
+</mat-card>

@@ -1,0 +1,35 @@
+
+<div class="bootstrap-container">
+    <div class="col-md-6 offset-md-3 padding">
+      <mat-card>
+      <h1 class="text-center font-monospace" style="font-weight: bold;">Login to Pariksha</h1>
+      <div class="container text-center">
+        <img src="../../../assets/Desktop/login-icon.png">
+      </div>
+      {{loginData | json}}
+      <form #formuser="ngForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6 offset-md-3">
+        <input class="login-form" 
+        name="userName" required #userName="ngModel"
+        [ngClass]="{'red-border':formuser.submitted && userName.invalid}"
+        [(ngModel)]="loginData.userName"
+        type="text" placeholder="User Name">
+      </div>
+      <div class="col-md-6 offset-md-3">
+        <input class="login-form"
+        name="password" required #password="ngModel"
+        [ngClass]="{'red-border':formuser.submitted && password.invalid}"
+        name="password" required
+        [(ngModel)]="loginData.password"
+        type="password" placeholder="Password">
+      </div>
+
+      <div class="col-md-6 offset-md-3">
+       <button class="btn btn-primary margin-left-100">Login</button>
+       <button class="btn btn-secondary margin-left">Reset</button>
+      </div>
+    </form>
+    </mat-card>
+  
+   </div>
+</div>
